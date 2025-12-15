@@ -1,0 +1,739 @@
+/* ===== GRUNDLÄGGANDE STYLING ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #2C2F33;
+    background-color: #F4F3EF;
+}
+
+/* ===== HEADER OCH NAVIGATION ===== */
+header {
+    background-color: #E8DCC2;
+    padding: 20px 0;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.huvudmeny {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.huvudmeny li {
+    display: inline-block;
+}
+
+.huvudmeny a {
+    text-decoration: none;
+    color: #2C2F33;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.huvudmeny a:hover,
+.huvudmeny a:focus {
+    color: #7DA7C1;
+}
+
+.huvudmeny a.aktiv {
+    color: #7DA7C1;
+    border-bottom: 2px solid #7DA7C1;
+}
+
+/* ===== LOGOTYP ===== */
+.logotyp {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #F4F3EF;
+}
+
+.logotyp h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 48px;
+    color: #7DA7C1;
+    font-weight: 700;
+}
+
+/* ===== MAIN INNEHÅLL ===== */
+main {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+/* ===== BILDGALLERI (HEM) ===== */
+.bildgalleri {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.bildkort {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bildkort:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.bildkort img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.bildtext {
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #2C2F33;
+}
+
+/* ===== SIDRUBRIK ===== */
+.sida-rubrik {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 36px;
+    color: #2C2F33;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ===== PORTFOLIO KATEGORIER ===== */
+.portfolio-kategorier {
+    margin-bottom: 50px;
+}
+
+.kategori-nav {
+    margin-top: 30px;
+}
+
+.kategori-lista {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.kategori-lank {
+    text-decoration: none;
+    color: #2C2F33;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px 25px;
+    background-color: #E8DCC2;
+    border-radius: 25px;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.kategori-lank:hover,
+.kategori-lank:focus {
+    background-color: #7DA7C1;
+    color: #fff;
+}
+
+/* ===== PORTFOLIO GALLERI ===== */
+.portfolio-galleri {
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+/* Visa galleriet när dess ID är aktiv via hash */
+.portfolio-galleri:target {
+    display: grid;
+}
+
+/* Visa första galleriet (bröllop) som standard */
+.portfolio-galleri:first-of-type {
+    display: grid;
+}
+
+/* När något annat är target, dölj första galleriet */
+#portratt:target ~ #brollop,
+#barnfoto:target ~ #brollop,
+#frilans:target ~ #brollop {
+    display: none;
+}
+
+.portfolio-kort {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-kort:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-kort img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio-info {
+    padding: 25px;
+}
+
+.portfolio-info h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22px;
+    color: #7DA7C1;
+    margin-bottom: 10px;
+}
+
+.portfolio-info p {
+    font-size: 16px;
+    color: #2C2F33;
+    line-height: 1.5;
+}
+
+/* ===== TJÄNSTER SIDA ===== */
+.tjanster-section {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tjanster-intro {
+    text-align: center;
+    font-size: 18px;
+    color: #2C2F33;
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tjanster-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.tjanst-kort {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tjanst-kort:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.tjanst-header {
+    background-color: #7DA7C1;
+    padding: 25px;
+    text-align: center;
+}
+
+.tjanst-header h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 28px;
+    color: #fff;
+    margin: 0;
+}
+
+.tjanst-innehall {
+    padding: 30px;
+}
+
+.tjanst-beskrivning {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #2C2F33;
+    margin-bottom: 20px;
+}
+
+.tjanst-pris {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    color: #7DA7C1;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 15px;
+    border-top: 2px solid #E8DCC2;
+}
+
+.tjanster-extra {
+    background-color: #E8DCC2;
+    padding: 40px;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+.tjanster-extra h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 28px;
+    color: #2C2F33;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ingår-lista {
+    list-style: none;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.ingår-lista li {
+    font-size: 16px;
+    color: #2C2F33;
+    padding: 12px 0;
+    padding-left: 30px;
+    position: relative;
+}
+
+.ingår-lista li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #7DA7C1;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* ===== OM MIG SIDA ===== */
+.om-mig-section {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.om-mig-innehall {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    align-items: start;
+    margin-top: 40px;
+}
+
+.om-mig-bild {
+    position: sticky;
+    top: 20px;
+}
+
+.om-mig-bild img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    display: block;
+}
+
+.om-mig-text h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 28px;
+    color: #7DA7C1;
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+
+.om-mig-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #2C2F33;
+    margin-bottom: 20px;
+}
+
+.om-mig-info {
+    background-color: #E8DCC2;
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 35px;
+}
+
+.om-mig-info h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    color: #2C2F33;
+    margin-bottom: 15px;
+}
+
+.om-mig-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.om-mig-info li {
+    font-size: 16px;
+    color: #2C2F33;
+    padding: 10px 0;
+    padding-left: 30px;
+    position: relative;
+}
+
+.om-mig-info li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #7DA7C1;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* ===== KONTAKT SIDA ===== */
+.kontakt-section {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.kontakt-intro {
+    text-align: center;
+    font-size: 18px;
+    color: #2C2F33;
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.kontakt-innehall {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    align-items: start;
+    margin-top: 40px;
+}
+
+.kontakt-bild img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    display: block;
+    margin-bottom: 30px;
+}
+
+.kontakt-info-box {
+    background-color: #E8DCC2;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.kontakt-info-box h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    color: #2C2F33;
+    margin-bottom: 20px;
+}
+
+.kontakt-info-box p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #2C2F33;
+    margin-bottom: 15px;
+}
+
+.kontakt-info-box strong {
+    color: #7DA7C1;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* ===== FORMULÄR ===== */
+.kontakt-formular {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.formular-grupp {
+    margin-bottom: 25px;
+}
+
+.formular-grupp label {
+    display: block;
+    font-weight: 600;
+    color: #2C2F33;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.formular-grupp input[type="text"],
+.formular-grupp input[type="email"],
+.formular-grupp input[type="tel"],
+.formular-grupp input[type="date"],
+.formular-grupp select,
+.formular-grupp textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #E8DCC2;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: #2C2F33;
+    transition: border-color 0.3s ease;
+}
+
+.formular-grupp input:focus,
+.formular-grupp select:focus,
+.formular-grupp textarea:focus {
+    outline: none;
+    border-color: #7DA7C1;
+}
+
+.formular-grupp textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.checkbox-grupp {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.checkbox-grupp input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.checkbox-grupp label {
+    margin-bottom: 0;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.skicka-knapp {
+    width: 100%;
+    padding: 15px 30px;
+    background-color: #7DA7C1;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.skicka-knapp:hover,
+.skicka-knapp:focus {
+    background-color: #6a92a8;
+    transform: translateY(-2px);
+}
+
+.formular-info {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #E8DCC2;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 80px;
+}
+
+footer p {
+    font-size: 14px;
+    color: #2C2F33;
+}
+
+/* ===== MOBILANPASSNING ===== */
+
+/* Tablets och mindre skärmar */
+@media screen and (max-width: 900px) {
+    .bildgalleri,
+    .portfolio-galleri {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .tjanster-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .om-mig-innehall,
+    .kontakt-innehall {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .om-mig-bild {
+        position: static;
+    }
+    
+    .logotyp h1 {
+        font-size: 40px;
+    }
+    
+    .huvudmeny {
+        gap: 25px;
+    }
+    
+    .kategori-lista {
+        gap: 20px;
+    }
+    
+    .sida-rubrik {
+        font-size: 32px;
+    }
+}
+
+/* Mobiler */
+@media screen and (max-width: 600px) {
+    .bildgalleri,
+    .portfolio-galleri,
+    .tjanster-grid,
+    .om-mig-innehall,
+    .kontakt-innehall {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .logotyp h1 {
+        font-size: 32px;
+    }
+    
+    .huvudmeny {
+        gap: 15px;
+        flex-direction: column;
+    }
+    
+    .huvudmeny a {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+    
+    .bildkort img,
+    .portfolio-kort img {
+        height: 250px;
+    }
+    
+    main {
+        margin: 40px auto;
+    }
+    
+    .kategori-lista {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .kategori-lank {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .sida-rubrik {
+        font-size: 28px;
+    }
+    
+    .portfolio-info h3 {
+        font-size: 20px;
+    }
+    
+    .tjanst-header h3 {
+        font-size: 24px;
+    }
+    
+    .tjanst-innehall {
+        padding: 20px;
+    }
+    
+    .tjanster-extra {
+        padding: 25px;
+    }
+    
+    .tjanster-extra h3 {
+        font-size: 24px;
+    }
+    
+    .om-mig-text h3 {
+        font-size: 24px;
+    }
+    
+    .om-mig-text p {
+        font-size: 16px;
+    }
+    
+    .om-mig-info {
+        padding: 20px;
+    }
+    
+    .om-mig-info h4 {
+        font-size: 20px;
+    }
+    
+    .kontakt-formular {
+        padding: 25px;
+    }
+    
+    .kontakt-info-box {
+        padding: 20px;
+    }
+    
+    .kontakt-info-box h3 {
+        font-size: 20px;
+    }
+}
+
+/* Extra små mobiler */
+@media screen and (max-width: 400px) {
+    body {
+        font-size: 16px;
+    }
+    
+    .logotyp h1 {
+        font-size: 28px;
+    }
+    
+    .bildkort img,
+    .portfolio-kort img {
+        height: 200px;
+    }
+    
+    .sida-rubrik {
+        font-size: 24px;
+    }
+    
+    .kategori-lank {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}

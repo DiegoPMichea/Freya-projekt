@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kontakta Freya Photos för bokningar och förfrågningar om fotografering">
+    <title>Kontakt - Freya Photos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="huvudmeny">
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="tjanster.html">Tjänster</a></li>
+                <li><a href="om-mig.html">Om mig</a></li>
+                <li><a href="kontakt.html" class="aktiv">Kontakt</a></li>
+            </ul>
+        </nav>
+        
+        <div class="logotyp">
+            <h1>Freya Photos</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="kontakt-section">
+            <h2 class="sida-rubrik">Kontakta mig</h2>
+            <p class="kontakt-intro">Har du frågor eller vill boka en fotografering? Fyll i formuläret nedan så återkommer jag inom 24 timmar.</p>
+            
+            <div class="kontakt-innehall">
+                <div class="kontakt-bild">
+                    <img src="bilder/kamera.jpg" alt="Professionell kamerautrustning redo för fotografering">
+                    
+                    <div class="kontakt-info-box">
+                        <h3>Kontaktinformation</h3>
+                        <p><strong>E-post:</strong><br>info@freyaphotos.se</p>
+                        <p><strong>Telefon:</strong><br>070-123 45 67</p>
+                        <p><strong>Adress:</strong><br>Fotostudion, Stadsgatan 12<br>123 45 Stockholm</p>
+                        <p><strong>Öppettider:</strong><br>Måndag-Fredag: 09:00-17:00<br>Helger: Efter överenskommelse</p>
+                    </div>
+                </div>
+                
+                <div class="kontakt-formular">
+                    <form action="#" method="post">
+                        <div class="formular-grupp">
+                            <label for="namn">Namn *</label>
+                            <input 
+                                type="text" 
+                                id="namn" 
+                                name="namn" 
+                                required 
+                                autocomplete="name"
+                                aria-required="true">
+                        </div>
+                        
+                        <div class="formular-grupp">
+                            <label for="epost">E-postadress *</label>
+                            <input 
+                                type="email" 
+                                id="epost" 
+                                name="epost" 
+                                required 
+                                autocomplete="email"
+                                aria-required="true">
+                        </div>
+                        
+                        <div class="formular-grupp">
+                            <label for="telefon">Telefonnummer</label>
+                            <input 
+                                type="tel" 
+                                id="telefon" 
+                                name="telefon" 
+                                autocomplete="tel">
+                        </div>
+                        
+                        <div class="formular-grupp">
+                            <label for="tjanst">Typ av fotografering</label>
+                            <select id="tjanst" name="tjanst">
+                                <option value="">Välj en kategori</option>
+                                <option value="brollop">Bröllop</option>
+                                <option value="portratt">Porträtt</option>
+                                <option value="barnfoto">Barnfoto</option>
+                                <option value="frilans">Frilans</option>
+                                <option value="annat">Annat</option>
+                            </select>
+                        </div>
+                        
+                        <div class="formular-grupp">
+                            <label for="datum">Önskat datum</label>
+                            <input 
+                                type="date" 
+                                id="datum" 
+                                name="datum">
+                        </div>
+                        
+                        <div class="formular-grupp">
+                            <label for="meddelande">Meddelande *</label>
+                            <textarea 
+                                id="meddelande" 
+                                name="meddelande" 
+                                rows="6" 
+                                required
+                                aria-required="true"
+                                placeholder="Berätta gärna mer om ditt önskemål..."></textarea>
+                        </div>
+                        
+                        <div class="formular-grupp checkbox-grupp">
+                            <input 
+                                type="checkbox" 
+                                id="gdpr" 
+                                name="gdpr" 
+                                required
+                                aria-required="true">
+                            <label for="gdpr">Jag godkänner att mina uppgifter sparas enligt GDPR *</label>
+                        </div>
+                        
+                        <button type="submit" class="skicka-knapp">Skicka förfrågan</button>
+                        
+                        <p class="formular-info">Fält markerade med * är obligatoriska</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Freya Photos. Alla rättigheter förbehållna.</p>
+    </footer>
+</body>
+</html>
