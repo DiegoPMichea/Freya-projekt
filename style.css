@@ -104,7 +104,20 @@ main {
     width: 100%;
     height: 300px;
     object-fit: cover;
+    object-position: center center;
     display: block;
+}
+
+.center-image {
+    object-position: center 25% !important;
+}
+
+.adjust-right {
+    object-position: 50% center !important;
+}
+
+.adjust-right-more {
+    object-position: 45% center !important;
 }
 
 .bildtext {
